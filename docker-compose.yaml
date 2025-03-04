@@ -1,0 +1,33 @@
+services:
+
+  caddy:
+    image: caddy:2.8.4-alpine
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/.caddy/site:/srv
+      - $PWD/.caddy/logs:/var/log
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - accounting-net
+      - api-dian-net
+
+networks:
+  accounting-net:
+    name: accountingiac_accounting-net
+    external: true
+  api-dian-net:
+    name: dian-api-iac_api-dian-net
+    external: true
+
+
+volumes:
+  caddy_data:
+  caddy_config:

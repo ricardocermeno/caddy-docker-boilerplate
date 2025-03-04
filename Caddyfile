@@ -1,0 +1,59 @@
+{
+	log {
+		output file /var/log/caddy/access.log
+		format json
+	}
+}
+
+ideal.infinitysoft.tech {
+	encode gzip
+
+	handle /file-uploader/* {
+		uri strip_prefix /file-uploader
+		reverse_proxy fileuploader:3003
+	}
+
+	handle {
+		reverse_proxy router:4000
+	}
+
+	handle_errors {
+		respond "{http.error.status_code} {http.error.status_text}" {http.error.status_code}
+	}
+}
+
+codeserver.infinitysoft.tech {
+	encode gzip
+	
+	handle {
+		reverse_proxy codeserver:8443
+	}
+
+	handle_errors {
+		respond "{http.error.status_code} {http.error.status_text}" {http.error.status_code}
+	}
+}
+
+adminer.infinitysoft.tech {
+	encode gzip
+	
+	handle {
+		reverse_proxy adminer:8080
+	}
+
+	handle_errors {
+		respond "{http.error.status_code} {http.error.status_text}" {http.error.status_code}
+	}
+}
+
+apidian.infinitysoft.tech {
+	encode gzip
+	
+	handle {
+		reverse_proxy api_dian:8081
+	}
+
+	handle_errors {
+		respond "{http.error.status_code} {http.error.status_text}" {http.error.status_code}
+	}
+}
