@@ -50,7 +50,7 @@ kafkaui.infinitysoft.tech {
 	encode gzip
 	
 	handle {
-		reverse_proxy kafka-ui:8082
+		reverse_proxy kafka-ui:8080
 	}
 
 	handle_errors {
