@@ -5,7 +5,7 @@
 	}
 }
 
-ideal.infinitysoft.tech {
+ideal.rcermeno.link {
 	encode gzip
 
 	handle /file-uploader/* {
@@ -22,7 +22,7 @@ ideal.infinitysoft.tech {
 	}
 }
 
-codeserver.infinitysoft.tech {
+codeserver.rcermeno.link {
 	encode gzip
 	
 	handle {
@@ -34,7 +34,7 @@ codeserver.infinitysoft.tech {
 	}
 }
 
-adminer.infinitysoft.tech {
+adminer.rcermeno.link {
 	encode gzip
 	
 	handle {
@@ -46,7 +46,7 @@ adminer.infinitysoft.tech {
 	}
 }
 
-kafkaui.infinitysoft.tech {
+kafkaui.rcermeno.link {
 	encode gzip
 	
 	handle {
@@ -58,7 +58,7 @@ kafkaui.infinitysoft.tech {
 	}
 }
 
-apidian.infinitysoft.tech {
+apidian.rcermeno.link {
 	encode gzip
 	
 	handle {
