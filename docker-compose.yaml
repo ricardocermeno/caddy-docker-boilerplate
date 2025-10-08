@@ -19,6 +19,7 @@ services:
       - accounting-net
       - api-dian-net
       - kafkaui-net
+      - ideal-app-net
 
 networks:
   accounting-net:
@@ -29,6 +30,9 @@ networks:
     external: true
   kafkaui-net:
     name: kafka_kafkaui-net
+    external: true
+  ideal-app-net:
+    name: ideal-app-iac_ideal-app-net
     external: true
 
 
