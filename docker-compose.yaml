@@ -35,7 +35,6 @@ networks:
     name: ideal-app-iac_ideal-app-net
     external: true
 
-
 volumes:
   caddy_data:
   caddy_config:
