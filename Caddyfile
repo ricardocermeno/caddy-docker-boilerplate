@@ -99,3 +99,15 @@ ideal-apollo-mcp-server.rcermeno.link {
 		respond "{http.error.status_code} {http.error.status_text}" {http.error.status_code}
 	}
 }
+
+dian-db-mcp.rcermeno.link {
+	encode gzip
+
+	handle {
+		reverse_proxy mariadb-mcp:9001
+	}
+
+	handle_errors {
+		respond "{http.error.status_code} {http.error.status_text}" {http.error.status_code}
+	}
+}
